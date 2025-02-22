@@ -14,7 +14,7 @@ const Header = () => {
                   back for more. Explore our diverse selection of dishes, from classic 
                   comfort foods to bold new creations. At Chop Shop, we believe food is
                    more than just fuel – it's an experience. Bon appétit</p>
-                <button>View Menu</button>
+               
         </div>
     </div>
     </div>

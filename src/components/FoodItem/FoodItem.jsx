@@ -3,35 +3,41 @@ import './FoodItem.css';
 import { assets } from '../../assets/assets'; 
 import { StoreContext } from '../../context/StoreContext'; 
 
-const FoodItem = ({ id, name, price, description, image }) => { 
-    const { addToCart, removeFromCart, cartItems } = useContext(StoreContext); // ✅ Use StoreContext
+const FoodItem = ({ id, name, price, image }) => { 
+    const { addToCart, removeFromCart, cartItems } = useContext(StoreContext);
     const [itemCount, setItemCount] = useState(cartItems[id] || 0); 
 
     return (
         <div className='food-item'>
             <div className="food-item-img-container">
                 <img className='food-item-image' src={image} alt={name} />
+            </div>
+            <div className='food-item-info'>
+                <div className="food-item-name-price">
+                    <p className="food-item-name">{name}</p>
+                    <p className="food-item-price">${price}</p>
+                </div>
                 {!itemCount ? (
-                    <img 
-                        className='add' 
+                    <button 
+                        className='order-button' 
                         onClick={() => {
                             setItemCount(prev => prev + 1);
-                            addToCart(id); // ✅ Use addToCart
-                        }} 
-                        src={assets.add_icon_white} 
-                        alt=""
-                    />
+                            addToCart(id);
+                        }}
+                    >
+                        Order
+                    </button>
                 ) : (
                     <div className='food-item-counter'>
                         <img 
                             onClick={() => {
                                 if (itemCount > 0) {
                                     setItemCount(prev => prev - 1);
-                                    removeFromCart(id); // ✅ Use removeFromCart
+                                    removeFromCart(id);
                                 }
                             }} 
                             src={assets.remove_icon_red} 
-                            alt=""
+                            alt="Remove"
                         />
                         <p>{itemCount}</p>
                         <img 
@@ -40,18 +46,10 @@ const FoodItem = ({ id, name, price, description, image }) => {
                                 addToCart(id);
                             }} 
                             src={assets.add_icon_green} 
-                            alt=""
+                            alt="Add"
                         />
                     </div>
                 )}
-            </div>
-            <div className='food-item-info'>
-                <div className="food-item-name-rating">
-                    <p>{name}</p>
-                    <img src={assets.rating_starts} alt="Rating" />
-                </div>
-                <p className="food-item-desc">{description}</p>
-                <p className="food-item-price">${price}</p>
             </div>
         </div>
     );

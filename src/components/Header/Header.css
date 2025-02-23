@@ -2,24 +2,30 @@
 .header {
     height: 100vh; /* Full viewport height */
     margin: 0;
-    background: url('/header_img.png') no-repeat center center/cover; /* Full-screen background image */
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align content to the top */
     justify-content: center;
     overflow: hidden;
+    background-image: url('../../assets/header_img.png');
+    background-size: cover; /* Ensure the image covers the entire header */
+    background-position: center; /* Center the image */
 }
 
-/* Gradient Overlay */
-.header::before {
+.header::after {
     content: '';
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)); /* Dark gradient overlay */
+    height: 60%; /* Covers the bottom half */
+    background: linear-gradient(
+        to top,
+        rgb(246, 249, 246) 50%, /* First color (bottom) */
+        rgb(246, 248, 247) 100% /* Second color (top) */
+    );
     z-index: 1;
+    clip-path: ellipse(150% 100% at 50% 0%); /* Creates a partial semi-circle facing upwards */
 }
 
 /* Header Content */
@@ -28,48 +34,98 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: start;
-    gap: 2vw;
+    align-items: center;
+    gap: 1.5rem;
     max-width: 50%;
     padding: 0 6vw;
+    text-align: center;
     animation: fadeIn 2s ease-in-out;
+    margin-top: 10vh; /* Shift text up significantly */
 }
 
 .header-contents h2 {
-    font-weight: 700;
-    color: white;
-    font-size: max(5vw, 36px);
-    line-height: 1.2;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+    font-weight: 800;
+    color: rgb(254, 251, 251); /* Change text color to black */
+    font-size: clamp(2.5rem, 6vw, 4rem); /* Responsive font size */
+    line-height: 1.1;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.5); /* White shadow for better contrast */
+    margin-bottom: 1rem;
 }
 
 .header-contents p {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: max(1.2vw, 16px);
+    color: rgba(0, 0, 0, 0.9); /* Change text color to black */
+    font-size: clamp(1rem, 1.5vw, 1.2rem); /* Responsive font size */
     line-height: 1.6;
     max-width: 80%;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.5); /* White shadow for better contrast */
+    margin-bottom: 2rem;
 }
 
 .header-contents button {
     border: none;
     color: white;
     font-weight: 600;
-    padding: 1.5vw 3vw;
-    background: linear-gradient(135deg, #68c47a, #4aa85c); /* Gradient button */
-    font-size: max(1.2vw, 16px);
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #4aa85c, #68c47a); /* Green gradient */
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(104, 196, 122, 0.3); /* Soft shadow */
+    box-shadow: 0 4px 15px rgba(74, 168, 92, 0.3);
+    margin-top: 1rem; /* Space between text and button */
 }
 
 .header-contents button:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 6px 20px rgba(104, 196, 122, 0.5); /* Enhanced shadow */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(74, 168, 92, 0.5);
 }
 
-/* Fade-In Animation */
+/* Food Carousel */
+.food-carousel {
+    position: absolute;
+    bottom: 15%; /* Positioned above the white section */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.food-carousel img {
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.food-carousel img:hover {
+    transform: scale(1.1);
+}
+
+.carousel-arrow {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -81,38 +137,11 @@
     }
 }
 
-/* Responsive Design */
-@media (max-width: 1050px) {
-    .header-contents {
-        max-width: 60%;
+@keyframes float {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
     }
-
-    .header-contents h2 {
-        font-size: max(4.5vw, 28px);
-    }
-
-    .header-contents p {
-        font-size: max(1.5vw, 14px);
-    }
-
-    .header-contents button {
-        padding: 2vw 4vw;
-    }
-}
-
-@media (max-width: 750px) {
-    .header-contents {
-        max-width: 80%;
-        align-items: center;
-        text-align: center;
-    }
-
-    .header-contents p {
-        display: none; /* Hide paragraph on smaller screens */
-    }
-
-    .header-contents button {
-        padding: 3vw 6vw;
-        font-size: max(2vw, 14px);
+    50% {
+        transform: translateX(-50%) translateY(-10px);
     }
 }

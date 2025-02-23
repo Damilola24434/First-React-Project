@@ -9,7 +9,7 @@ import menu_4 from './menu_4.png'
 import menu_5 from './menu_5.png'
 import menu_6 from './menu_6.png'
 import menu_7 from './menu_7.png'
-import menu_8 from './menu_8.png'
+
 
 import food_1 from './food_1.png'
 import food_2 from './food_2.png'
@@ -84,11 +84,11 @@ export const assets = {
 
 export const menu_list = [
     {
-        menu_name: "Salad",
+        menu_name: "Appetizers",
         menu_image: menu_1
     },
     {
-        menu_name: "Rolls",
+        menu_name: "Burgers & Fries",
         menu_image: menu_2
     },
     {
@@ -100,80 +100,77 @@ export const menu_list = [
         menu_image: menu_4
     },
     {
-        menu_name: "Cake",
+        menu_name: "Naija Classic",
         menu_image: menu_5
     },
     {
-        menu_name: "Pure Veg",
+        menu_name: "Pasta",
         menu_image: menu_6
     },
     {
-        menu_name: "Pasta",
+        menu_name: "Shawarma & Wraps",
         menu_image: menu_7
     },
-    {
-        menu_name: "Noodles",
-        menu_image: menu_8
-    }]
+   ]
 
 export const food_list = [
     {
         _id: "1",
-        name: "Greek salad",
+        name: "Moi Moi",
         image: food_1,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Salad"
+        category: "Appetizers"
     },
     {
         _id: "2",
-        name: "Veg salad",
+        name: "Mozzarella Sticks",
         image: food_2,
         price: 18,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Salad"
+        category: "Appetizers"
     }, {
         _id: "3",
-        name: "Clover Salad",
+        name: "Nachos",
         image: food_3,
         price: 16,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Salad"
+        category: "Appetizers"
     }, {
         _id: "4",
-        name: "Chicken Salad",
+        name: "Puff Puff",
         image: food_4,
         price: 24,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Salad"
+        category: "Appetizers"
     }, {
         _id: "5",
-        name: "Lasagna Rolls",
+        name: "Chicken Burger and Fries",
         image: food_5,
         price: 14,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Rolls"
+        category: "Burgers & Fries"
     }, {
         _id: "6",
-        name: "Peri Peri Rolls",
+        name: "Beef Patty and Fries",
         image: food_6,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Rolls"
+        category: "Burgers & Fries"
     }, {
         _id: "7",
-        name: "Chicken Rolls",
+        name: "Double Cheese Burger",
         image: food_7,
         price: 20,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Rolls"
+        category: "Burgers & Fries"
     }, {
         _id: "8",
-        name: "Veg Rolls",
+        name: "CheeseBacon Burger",
         image: food_8,
         price: 15,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Rolls"
+        category: "Burgers & Fries"
     }, {
         _id: "9",
         name: "Ripple Ice Cream",
@@ -266,85 +263,85 @@ export const food_list = [
         image: food_21,
         price: 14,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pure Veg"
+        category: "Pasta"
     }, {
         _id: "22",
         name: "Fried Cauliflower",
         image: food_22,
         price: 22,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pure Veg"
+        category: "Pasta"
     }, {
         _id: "23",
         name: "Mix Veg Pulao",
         image: food_23,
         price: 10,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pure Veg"
+        category: "Pasta"
     }, {
         _id: "24",
         name: "Rice Zucchini",
         image: food_24,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pure Veg"
+        category: "Pasta"
     },
     {
         _id: "25",
-        name: "Cheese Pasta",
+        name: "Spicy Veggie Shawarma ",
         image: food_25,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pasta"
+        category: "Shawarma & Wraps"
     },
     {
         _id: "26",
-        name: "Tomato Pasta",
+        name: "Mediterranean Lamb Shawarma ",
         image: food_26,
         price: 18,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pasta"
+        category: "Shawarma & Wraps"
     }, {
         _id: "27",
-        name: "Creamy Pasta",
+        name: "Beef Suya Shawarma ",
         image: food_27,
         price: 16,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pasta"
+        category: "Shawarma & Wraps"
     }, {
         _id: "28",
-        name: "Chicken Pasta",
+        name: "Classic Chicken Shawarma",
         image: food_28,
         price: 24,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pasta"
+        category: "Shawarma & Wraps"
     }, {
         _id: "29",
-        name: "Buttter Noodles",
+        name: "Beef Stew & Rice",
         image: food_29,
         price: 14,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Noodles"
+        category: "Naija Classic"
     }, {
         _id: "30",
-        name: "Veg Noodles",
+        name: "Jollof Rice",
         image: food_30,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Noodles"
+        category: "Naija Classic"
     }, {
         _id: "31",
-        name: "Somen Noodles",
+        name: "Amala and Ewedu",
         image: food_31,
         price: 20,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Noodles"
+        category: "Naija Classic"
     }, {
         _id: "32",
-        name: "Cooked Noodles",
+        name: "Pounded yam & Egusi",
         image: food_32,
         price: 15,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Noodles"
+        category: "Naija Classic"
     }
 ]

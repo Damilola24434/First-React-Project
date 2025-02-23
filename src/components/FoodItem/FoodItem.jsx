@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
 import './FoodItem.css';
 import { assets } from '../../assets/assets'; 
-import { StoreContext } from '../../context/StoreContext'; 
+import { StoreContext } from "../../context/storeContext";
+ 
 
 const FoodItem = ({ id, name, price, image }) => { 
     const { addToCart, removeFromCart, cartItems } = useContext(StoreContext);

@@ -11,7 +11,7 @@
     display: flex;
     list-style: none;
     gap:20px;
-    color: #68c47a;
+    color: #0b0b0b;
     font-size: 18px;
 }
 .navbar-right{
@@ -23,7 +23,7 @@
    background: transparent;
    font-size: 16px;
    color:#121212;
-   border: 1px solid rgb(97, 197, 122);
+   border: 1px solid rgb(15, 16, 15);
    padding: 10px 30px;
    border-radius: 50px;
    cursor: pointer;
@@ -35,7 +35,8 @@
 }
 .navbar .active{
     padding-bottom:2px;
-    border-bottom: 2px solid #5fcb72;
+    border-bottom: 2px solid #0b0b0b;
+    
 }
 .navbar li{
     cursor: pointer;
@@ -48,7 +49,7 @@
     position: absolute;
     min-width: 10px;
     min-height: 10px;
-    background-color: #5fcb72;
+    background-color: #0df036;
     border-radius: 5px;
     top:-8px;
     right: -8px;

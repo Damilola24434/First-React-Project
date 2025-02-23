@@ -1,66 +1,79 @@
 .food-menu {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px; /* Reduced gap for a more compact look */
     background-color: #f5f5f5; /* Light gray background */
-    padding: 20px; /* Add padding for better spacing */
-    border-radius: 15px; /* Optional: Add rounded corners */
-  }
-  
-  .food-menu h1 {
+    padding: 15px; /* Reduced padding */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.food-menu h1 {
     color: #090909; /* Black color */
     font-weight: 700; /* Bold text */
-  }
-  
-  .food-menu-text {
+    font-size: 24px; /* Slightly smaller font size */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.food-menu-text {
     max-width: 60%;
     color: #808080;
-  }
-  
-  .food-menu-list {
+    font-size: 14px; /* Smaller font size */
+    line-height: 1.5; /* Improved readability */
+}
+
+.food-menu-list {
     display: flex;
     justify-content: flex-start; /* Align buttons to the left */
     align-items: center;
-    gap: 15px; /* Space between buttons */
-    margin: 20px 0px;
+    gap: 10px; /* Reduced gap between buttons */
+    margin: 15px 0px; /* Reduced margin */
     overflow-x: scroll;
-  }
-  
-  .food-menu-list::-webkit-scrollbar {
+    padding-bottom: 10px; /* Space for scroll */
+}
+
+.food-menu-list::-webkit-scrollbar {
     display: none; /* Hide scrollbar */
-  }
-  
-  .food-menu-list-item {
+}
+
+.food-menu-list-item {
+
     background-color: transparent; /* Match page background */
     color: black; /* Black text */
     border: 2px solid #7b7b7b; /* Green border */
     border-radius: 25px; /* Rounded corners */
-    padding: 10px 20px; /* Padding for button */
-    font-size: max(1.4vw, 16px);
+    padding: 8px 16px; /* Reduced padding */
+    font-size: max(1.2vw, 14px); /* Smaller font size */
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .food-menu-list-item:hover {
+    transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Added transform for hover effect */
+}
+
+.food-menu-list-item:hover {
     background-color: black; /* Black background on hover */
     color: white; /* White text on hover */
-  }
-  
-  .food-menu-list-item.active {
+    transform: scale(1.05); /* Slight scale up on hover */
+}
+
+.food-menu-list-item.active {
     background-color: #209f37; /* Green background for active button */
     color: white; /* White text for active button */
-  }
-  
-  .explore-menu hr {
+    border-color: #209f37; /* Match border color with background */
+}
+
+.explore-menu hr {
     margin: 10px 0px;
     height: 2px;
     background-color: #209f37;
     border: none;
-  }
-  
-  @media (max-width: 1050px) {
+}
+
+@media (max-width: 1050px) {
     .food-menu-text {
-      max-width: 100%;
-      font-size: 14px;
+        max-width: 100%;
+        font-size: 12px; /* Smaller font size for mobile */
     }
-  }
+
+    .food-menu-list-item {
+        font-size: 14px; /* Ensure buttons are readable on smaller screens */
+    }
+}

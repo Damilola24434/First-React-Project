@@ -6,6 +6,7 @@ import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import FoodMenu from './components/Menu/FoodMenu';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';  // Import Footer component
+import Login from './pages/Login/Login';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/order" element={<PlaceOrder />} />
           <Route path="/menu" element={<FoodMenu />} />
+          <Route path='/login' element={<Login/>}/>
         </Routes>
         <Footer /> {/* Footer will be visible after all routes */}
       </>
